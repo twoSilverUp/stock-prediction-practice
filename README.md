@@ -1,16 +1,16 @@
 # Stock Trading Market OpenAI Gym Environment with Deep Reinforcement Learning using Keras
 
 ## Overview
+The project is currently adjusting the code from <a href="https://github.com/kh-kim/stock_market_reinforcement_learning">stock market reinforcement learning</a> to match the current version.
+It is still in progress and will continue to be updated. Additionally, the goal is to make it executable on Colab.
 
-This project provides a general environment for stock market trading simulation using [OpenAI Gym](https://gym.openai.com/). 
+### Main Topic of the Original Project
+The original project provides a general environment for stock market trading simulation using [OpenAI Gym](https://gym.openai.com/). 
 Training data is a close price of each day, which is downloaded from Google Finance, but you can apply any data if you want.
 Also, it contains simple Deep Q-learning and Policy Gradient from [Karpathy's post](http://karpathy.github.io/2016/05/31/rl/).
 
-In fact, the purpose of this project is not only providing a best RL solution for stock trading, but also building a general open environment for further research.  
-**So, please, manipulate the model architecture and features to get your own better solution.**
 
 ## Requirements
-
 - Python2.7 or higher
 - Numpy
 - HDF5
@@ -26,15 +26,15 @@ After meet those requirements in above, you can begin the training both algorith
 
 Train Deep Q-learning:
 
-    $ python market_dqn.py <list filename> [model filename]
+     	!python market_dqn.py 
 
 Train Policy Gradient:
 
-	$ python market_pg.py <list filename> [model filename]
+	!python market_pg.py 
 
 For example, you can do like this:
 
-	$ python market_pg.py ./kospi_10.csv pg.h5
+	!python market_pg.py ./kospi_10.csv pg.h5
 
 Aware that the provided neural network architecture in this repo is too small to learn.
 So, it may under-fitting if you try to learn every stock data.
@@ -45,13 +45,5 @@ Thus you need to re-design your own architecture and
 Below is training curve for Top-10 KOSPI stock datas for 4 years using Policy Gradient.  
 ![Training Curve](./pg_over_top_10.png)
 
-## To do
-- Test environment to check overfitting.
-- Elaborate the PG's train interface.
-
-## Reference
-
-[1] [Playing Atari with Deep Reinforcement Learning](http://arxiv.org/abs/1312.5602)  
-[2] [Deep Reinforcement Learning: Pong from Pixels](http://karpathy.github.io/2016/05/31/rl/)  
-[3] [KEras Reinforcement Learning gYM agents, KeRLym](https://github.com/osh/kerlym)  
-[4] [Keras plays catch, a single file Reinforcement Learning example](http://edersantana.github.io/articles/keras_rl/)
+## Problem Now
+- GPU memory overflow
